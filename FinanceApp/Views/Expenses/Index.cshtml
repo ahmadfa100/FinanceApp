@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<FinanceApp.Models.Expens>
+<link rel="stylesheet" href="~/css/Expense.css" asp-append-version="true" />
+
+<h2>My Expnses</h2>
+<div class ="container">
+    <table>
+        <thead>
+        <tr>
+            <th>Dscription</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Description</td>
+                    <td>@item.Amount</td>
+                    <td>@item.Catogry</td>
+                    <td>@item.Date</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
