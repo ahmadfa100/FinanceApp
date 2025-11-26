@@ -1,4 +1,5 @@
 using FinanceApp.Data;
+using FinanceApp.Data.services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ builder.Services.AddDbContext<FinanceAppContext>(options =>
 options.UseSqlServer
 (builder.Configuration.GetConnectionString
 ("DefaultConnectionString")));
+builder.Services.AddScoped<IExpenseService, ExpenseService>(); 
 
 var app = builder.Build();
 
